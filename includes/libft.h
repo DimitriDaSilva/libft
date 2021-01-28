@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/28 19:50:41 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/28 22:58:25 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct		s_format
 ** MEMORY FUNCTIONS
 */
 
+void				*ft_realloc(void *ptr, size_t orig_size, size_t new_size);
 void				*ft_calloc(size_t nmemb, size_t size);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
