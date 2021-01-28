@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_chars.c                                   :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/28 16:32:26 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:51:21 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_split_chars.h"
+#include "ft_split.h"
 
-char			**ft_split_chars(char *str, char *charset)
+char			**ft_split(char *str, char *charset)
 {
 	char	**strs;
 	int		i;

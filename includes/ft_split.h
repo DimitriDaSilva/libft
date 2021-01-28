@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_chars.h                                   :+:      :+:    :+:   */
+/*   ft_split.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 15:40:26 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/28 15:41:05 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:56:19 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SPLIT_CHARS_H
-# define FT_SPLIT_CHARS_H
+#ifndef FT_SPLIT_H
+# define FT_SPLIT_H
 
 # include "libft.h"
 
@@ -21,3 +21,4 @@ static void		import_str(char **dest, char *src, int start, int end);
 int g_k;
 
 #endif
+
