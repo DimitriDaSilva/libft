@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_split_chars.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 21:51:12 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/28 15:56:30 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/01/28 15:40:26 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/01/28 15:41:05 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_SPLIT_CHARS_H
+# define FT_SPLIT_CHARS_H
 
-int	get_next_line(int fd, char **line)
-{
-	char	buf;
-	int		i;
+# include "libft.h"
 
-	if (read(fd, 0, 0) == -1)
-		return (-1);
-	if (!(*line = malloc(MAX_LINE)))
-		return (-1);
-	i = 0;
-	while (read(fd, &buf, 1))
-	{
-		if (buf == '\n')
-		{
-			(*line)[i] = '\0';
-			return (1);
-		}
-		(*line)[i++] = buf;
-	}
-	(*line)[i] = '\0';
-	return (0);
-}
+static int		find_length(char *str, char *charset);
+static void		import_str(char **dest, char *src, int start, int end);
+
+int g_k;
+
+#endif

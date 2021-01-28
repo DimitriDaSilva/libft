@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/16 18:50:00 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/28 15:42:07 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	get_length(const char *s, char c)
 	return (count);
 }
 
-char			**ft_split(char const *s, char c)
+char			**ft_split_char(char const *s, char c)
 {
 	char	**strs;
 	char	**sav_strs;
