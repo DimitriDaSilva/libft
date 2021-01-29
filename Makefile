@@ -40,4 +40,12 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
+normH:
+			~/.norminette/norminette.rb $(INCDIR)/*.h
+
+normC:
+			~/.norminette/norminette.rb $(SRCS)
+
+norm:		normH normC
+
 re:			fclean all
