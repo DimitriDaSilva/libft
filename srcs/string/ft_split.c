@@ -6,11 +6,12 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/28 19:51:21 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/29 17:49:05 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_split.h"
+#include <stdio.h>
 
 char			**ft_split(char *str, char *charset)
 {
@@ -20,6 +21,8 @@ char			**ft_split(char *str, char *charset)
 
 	j = 0;
 	g_k = 0;
+	if (str == 0)
+		return (0);
 	if (!(strs = malloc((find_length(str, charset) + 1) * sizeof(char *))))
 		return (0);
 	while (str[j] != '\0')
