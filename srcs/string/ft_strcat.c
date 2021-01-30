@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 17:59:10 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/30 10:09:42 by dda-silv         ###   ########.fr       */
+/*   Created: 2020/10/29 07:58:52 by dda-silv          #+#    #+#             */
+/*   Updated: 2020/11/05 08:42:57 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strisdigit(char *s)
+char	*ft_strcat(char *dest, char *src)
 {
-	if (!s)
-		return (0);
-	while (*s)
-	{
-		if (!ft_isdigit(*s))
-			return (0);
-		s++;
-	}
-	return (1);
+	char *sav_d;
+
+	sav_d = dest;
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	return (sav_d);
 }

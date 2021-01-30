@@ -6,11 +6,12 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 18:46:57 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/20 21:58:36 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/30 09:04:37 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
