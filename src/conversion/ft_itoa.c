@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:31:59 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/24 20:42:17 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/17 14:46:15 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_itoa(long long n)
 	*str-- = '\0';
 	while (size_nbr--)
 	{
-		*str-- = ft_abs_lg(n) % 10 + ASCII_OFFSET_NUM;
+		*str-- = ft_abs(n) % 10 + ASCII_OFFSET_NUM;
 		if (-10 < n && n < 0)
 		{
 			*str-- = '-';

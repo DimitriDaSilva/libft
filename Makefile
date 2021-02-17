@@ -3,49 +3,95 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+         #
+#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/11 15:58:25 by dda-silv          #+#    #+#              #
-#    Updated: 2021/01/12 10:37:58 by dda-silv         ###   ########.fr        #
+#    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
+#    Updated: 2021/02/17 14:47:47 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	$(wildcard ./srcs/*/*.c)
+# Name of the program built
+NAME			:=		libft.a
 
-OBJS	=	$(SRCS:.c=.o)
+# Name directory
+PATH_SRC		:=		src
+PATH_BUILD		:=		build
 
-INCDIR  =	includes
+# List of sources
+SRCS			:=		$(shell find $(PATH_SRC) -name *.c)
+OBJS			:=		$(SRCS:%=$(PATH_BUILD)/%.o)
+DEPS			:=		$(OBJS:.o=.d)
+INC_DIRS		:=		$(shell find $(PATH_SRC) -type d)
 
-NAME	=	libft.a
+# Compiler
+CC				:=		gcc
 
-CC		=	gcc
+# Flags - compilation
+FLAG_WARNING	:=		-Wall -Wextra -Werror
+FLAG_INC		:= 		$(addprefix -I, $(INC_DIRS))
+FLAG_MAKEFILE	:=		-MMD -MP
+FLAGS_COMP		:= 		$(FLAG_WARNING) $(FLAG_INC) $(FLAG_MAKEFILE)
 
-ARRC	=	ar rcs
+# Flags - debugging
+FLAG_DEBUG		:= 		-g -fsanitize=address
 
-RM		=	rm -f
+# Others commands
+RM				=		rm -rf
+ARRC			:=		ar rcs
 
-CFLAGS	=	-Wall -Wextra -Werror 
+# Color Code and template code
+_YELLOW			=		\e[38;5;184m
+_GREEN			=		\e[38;5;46m
+_RESET			=		\e[0m
+_INFO			=		[$(_YELLOW)INFO$(_RESET)]
+_SUCCESS		=		[$(_GREEN)SUCCESS$(_RESET)]
 
-.c.o:
-			$(CC) -g $(CFLAGS) -c $^ -o $(<:.c=.o) -I$(INCDIR)
+# Functions
+all:					init $(NAME)
+						@ echo "$(_SUCCESS) Compilation done"
 
-$(NAME):	$(OBJS)
-			$(ARRC) $(NAME) $(OBJS)
+debug:					FLAGS_COMP += $(FLAG_DEBUG)
+debug:					re
 
-all:		$(NAME)
+init:
+						@ echo "$(_INFO) Initialize $(NAME)"
+
+$(NAME):				$(OBJS)
+						$(ARRC) $(NAME) $(OBJS) -o $@
+
+
+$(PATH_BUILD)/%.c.o:	%.c
+						mkdir -p $(dir $@)
+						$(CC) $(FLAGS_COMP) -c $< -o $@
 
 clean:
-			$(RM) $(OBJS) $(BONUS_OBJS)
+						@ $(RM) -rf $(PATH_BUILD)
+						@ echo "$(_INFO) Deleted files and directory"
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean:					clean
+						@ $(RM) $(NAME)
+
+re:						fclean all
+
+old_normH:
+						~/.old_norminette/norminette.rb $(shell find $(PATH_SRC) -name *.h)
+
+old_normC:
+						~/.old_norminette/norminette.rb $(SRCS)
+
+old_norm:				old_normH old_normC
 
 normH:
-			~/.norminette/norminette.rb $(INCDIR)/*.h
+						norminette $(shell find $(PATH_SRC) -name *.h)
 
 normC:
-			~/.norminette/norminette.rb $(SRCS)
+						norminette $(SRCS)
 
-norm:		normH normC
+norm:					normH normC
 
-re:			fclean all
+.PHONY:					all clean fclean re
+
+-include $(DEPS)
+
+# Source for some pieces of this Makefile: 
+# https://makefiletutorial.com/#makefile-cookbook

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_types3.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 19:53:42 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/25 11:03:51 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/17 14:46:06 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ void	print_g_flt(t_format *settings, double nb, int precision)
 {
 	char	*nb_to_print;
 
-	if (0.9 < ft_abs_dl(nb) && ft_abs_dl(nb) < 1)
+	if (0.9 < ft_fabs(nb) && ft_fabs(nb) < 1)
 		precision++;
 	nb_to_print = ft_ftoa(nb, precision);
 	if (!ft_strchr(settings->flags, '#'))
