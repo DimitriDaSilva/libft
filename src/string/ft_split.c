@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/29 17:49:05 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:16:56 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ char			**ft_split(char *str, char *charset)
 	char	**strs;
 	int		i;
 	int		j;
+	int		k;
 
 	j = 0;
-	g_k = 0;
+	k = 0;
 	if (str == 0)
 		return (0);
 	if (!(strs = malloc((find_length(str, charset) + 1) * sizeof(char *))))
@@ -31,11 +32,11 @@ char			**ft_split(char *str, char *charset)
 		while (!ft_strchr(charset, str[j]) && str[j] != '\0')
 			j++;
 		if (i != j)
-			import_str(strs, &str[i], i, j);
+			import_str(&strs[k++], &str[i], i, j);
 		else
 			j++;
 	}
-	strs[g_k] = 0;
+	strs[k] = 0;
 	return (strs);
 }
 
@@ -52,9 +53,8 @@ static int		find_length(char *str, char *charset)
 
 static void		import_str(char **dest, char *src, int start, int end)
 {
-	if (!(dest[g_k] = malloc(((end - start + 1) * sizeof(char)))))
+	if (!(*dest = malloc(((end - start + 1) * sizeof(char)))))
 		return ;
-	ft_strncpy(dest[g_k], src, end - start);
-	dest[g_k][end - start] = '\0';
-	g_k++;
+	ft_strncpy(*dest, src, end - start);
+	(*dest)[end - start] = '\0';
 }

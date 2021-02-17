@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: dda-silv <dda-silv@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/02/17 14:47:47 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/02/17 15:12:42 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,11 @@ CC				:=		gcc
 FLAG_WARNING	:=		-Wall -Wextra -Werror
 FLAG_INC		:= 		$(addprefix -I, $(INC_DIRS))
 FLAG_MAKEFILE	:=		-MMD -MP
-FLAGS_COMP		:= 		$(FLAG_WARNING) $(FLAG_INC) $(FLAG_MAKEFILE)
+FLAG_DEBUG		:= 		-g
+FLAGS_COMP		:= 		$(FLAG_WARNING) $(FLAG_INC) $(FLAG_MAKEFILE) $(FLAG_DEBUG)
 
-# Flags - debugging
-FLAG_DEBUG		:= 		-g -fsanitize=address
+# Flags - memory leak check
+FLAG_MEM_LEAK	:= 		-fsanitize=address
 
 # Others commands
 RM				=		rm -rf
@@ -50,7 +51,7 @@ _SUCCESS		=		[$(_GREEN)SUCCESS$(_RESET)]
 all:					init $(NAME)
 						@ echo "$(_SUCCESS) Compilation done"
 
-debug:					FLAGS_COMP += $(FLAG_DEBUG)
+debug:					FLAGS_COMP += $(FLAG_MEM_LEAK)
 debug:					re
 
 init:
