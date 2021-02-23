@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_ultoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 18:25:20 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/23 17:04:07 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/01/14 12:31:59 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/18 19:44:07 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_ultoa(unsigned long long n)
 {
-	void	*mem;
+	char	*str;
+	size_t	size_nbr;
 
-	if (!(mem = malloc(nmemb * size)))
+	size_nbr = get_len_uint(n);
+	if (!(str = ft_calloc(size_nbr + 1, sizeof(char))))
 		return (0);
-	ft_bzero(mem, nmemb * size);
-	return (mem);
+	str += size_nbr - 1;
+	while (size_nbr--)
+	{
+		*str-- = n % 10 + ASCII_OFFSET_NUM;
+		n /= 10;
+	}
+	return (++str);
 }

@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/17 14:43:25 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/23 18:01:06 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdarg.h>
 
 # define ASCII_OFFSET_NUM 48
 # define ASCII_OFFSET_ALPHA 32
@@ -55,16 +54,16 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 ** CONVERSION FUNCTIONS
 */
 
-char				*ft_ftoa(double nb, int precision);
+char				*ft_ftoa(long double nb, int precision);
 char				*ft_convert_base(unsigned long long nbr, char *base_to);
 char				*ft_itoa(long long n);
-int					ft_atoi(const char *str);
+char				*ft_ultoa(unsigned long long n);
+long long			ft_atoi(const char *str);
 
 /*
 ** PRINTING FUNCTIONS
 */
 
-int					ft_printf(const char *format, ...);
 int					ft_putchar(char c);
 int					ft_putstr(char *str);
 void				ft_putchar_fd(char c, int fd);
@@ -134,13 +133,15 @@ t_list				*ft_lstmap(t_list *lst,
 */
 
 int					ft_is_even(int nb);
-double				ft_remainder(double numer, double denom);
-int					ft_power(int nb, int power);
+long double			ft_remainder(long double numer, long double denom);
+long long			ft_power(long long nb, long long power);
 int					ft_sqrt(int nb);
 long long			ft_abs(long long n);
 double				ft_fabs(double n);
-size_t				get_size_dl(double nb);
-size_t				get_size_lg(long long nb);
+size_t				get_len_int(long long nb);
+size_t				get_len_float(long double nb);
+size_t				get_len_uint(unsigned long long nb);
 int					ft_round(double nb);
+long double			ft_roundf(long double nb, int decimal_places);
 
 #endif

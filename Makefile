@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/02/17 15:12:42 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/02/21 23:19:00 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ FLAGS_COMP		:= 		$(FLAG_WARNING) $(FLAG_INC) $(FLAG_MAKEFILE) $(FLAG_DEBUG)
 FLAG_MEM_LEAK	:= 		-fsanitize=address
 
 # Others commands
-RM				=		rm -rf
+RM				:=		rm -rf
 ARRC			:=		ar rcs
 
 # Color Code and template code

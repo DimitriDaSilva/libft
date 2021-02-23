@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_print.h                                  :+:      :+:    :+:   */
+/*   get_len_uint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/22 13:33:30 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/23 17:06:33 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/01/22 13:24:13 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/22 16:42:23 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_PRINT_H
-# define FT_PRINTF_PRINT_H
+#include "libft.h"
 
-# include "ft_printf.h"
-
-static void	print_left(char *str, t_format *settings);
-static void	print_right(char *str, t_format *settings);
-
-#endif
+size_t	get_len_uint(unsigned long long nb)
+{
+	if (nb < 10)
+		return (1);
+	return (1 + get_len_uint(nb / 10));
+}

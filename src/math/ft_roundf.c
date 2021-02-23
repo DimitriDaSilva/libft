@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_roundf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 18:25:20 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/23 17:04:07 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/02/17 17:16:57 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/21 20:06:13 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+long double	ft_roundf(long double nb, int decimal_places)
 {
-	void	*mem;
+	double		power;
+	long double	ret;
 
-	if (!(mem = malloc(nmemb * size)))
+	if (decimal_places <= 0)
 		return (0);
-	ft_bzero(mem, nmemb * size);
-	return (mem);
+	power = ft_power(10, decimal_places - 1);
+	nb *= power;
+	if (nb >= 0)
+		ret = (long long)(nb + 0.5) / power;
+	else
+		ret = (long long)(nb - 0.5) / power;
+	return (ret);
 }
