@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/02/21 23:19:00 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/02/24 09:45:54 by dds              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ init:
 						@ echo "$(_INFO) Initialize $(NAME)"
 
 $(NAME):				$(OBJS)
-						$(ARRC) $(NAME) $(OBJS) -o $@
+						$(ARRC) $@ $(OBJS)
 
 
 $(PATH_BUILD)/%.c.o:	%.c
