@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 18:44:56 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/03/01 17:04:21 by dds              ###   ########.fr       */
+/*   Updated: 2021/03/01 23:18:34 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_max(long long nb, int length)			
+static int	is_max(long long nb, int length)
 {
 	int	check;
 
@@ -27,8 +27,8 @@ static int	is_max(long long nb, int length)
 long long	ft_atoi(const char *str)
 {
 	long long	number;
-	int 		sign;
-	int 		length;
+	int			sign;
+	int			length;
 
 	number = 0;
 	sign = 1;
