@@ -6,7 +6,7 @@
 #    By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/02/24 09:45:54 by dds              ###   ########.fr        #
+#    Updated: 2021/03/01 16:48:44 by dds              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PATH_BUILD		:=		build
 
 # List of sources
 SRCS			:=		$(shell find $(PATH_SRC) -name *.c)
-OBJS			:=		$(SRCS:%=$(PATH_BUILD)/%.o)
+OBJS			:=		$(SRCS:%.c=$(PATH_BUILD)/%.o)
 DEPS			:=		$(OBJS:.o=.d)
 INC_DIRS		:=		$(shell find $(PATH_SRC) -type d)
 
@@ -61,7 +61,7 @@ $(NAME):				$(OBJS)
 						$(ARRC) $@ $(OBJS)
 
 
-$(PATH_BUILD)/%.c.o:	%.c
+$(PATH_BUILD)/%.o:		%.c
 						mkdir -p $(dir $@)
 						$(CC) $(FLAGS_COMP) -c $< -o $@
 
