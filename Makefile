@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+         #
+#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/03/01 16:48:44 by dds              ###   ########.fr        #
+#    Updated: 2021/04/08 10:00:17 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,44 +49,36 @@ _SUCCESS		=		[$(_GREEN)SUCCESS$(_RESET)]
 
 # Functions
 all:					init $(NAME)
-						@ echo "$(_SUCCESS) Compilation done"
+						@ printf "$(_SUCCESS) Compilation done\n"
 
 debug:					FLAGS_COMP += $(FLAG_MEM_LEAK)
 debug:					re
 
 init:
-						@ echo "$(_INFO) Initialize $(NAME)"
+						@ printf "$(_INFO) Initialize $(NAME)\n"
 
 $(NAME):				$(OBJS)
-						$(ARRC) $@ $(OBJS)
+						@ $(ARRC) $@ $(OBJS)
 
 
 $(PATH_BUILD)/%.o:		%.c
-						mkdir -p $(dir $@)
-						$(CC) $(FLAGS_COMP) -c $< -o $@
+						@ mkdir -p $(dir $@)
+						@ $(CC) $(FLAGS_COMP) -c $< -o $@
 
 clean:
 						@ $(RM) -rf $(PATH_BUILD)
-						@ echo "$(_INFO) Deleted files and directory"
+						@ printf "$(_INFO) Deleted files and directory\n"
 
 fclean:					clean
 						@ $(RM) $(NAME)
 
 re:						fclean all
 
-old_normH:
-						~/.old_norminette/norminette.rb $(shell find $(PATH_SRC) -name *.h)
-
-old_normC:
-						~/.old_norminette/norminette.rb $(SRCS)
-
-old_norm:				old_normH old_normC
-
 normH:
-						norminette $(shell find $(PATH_SRC) -name *.h)
+						@ norminette $(shell find $(PATH_SRC) -name *.h)
 
 normC:
-						norminette $(SRCS)
+						@ norminette $(SRCS)
 
 norm:					normH normC
 
