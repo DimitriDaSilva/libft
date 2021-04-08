@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/03/01 23:30:14 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:23:49 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 # define ASCII_OFFSET_ALPHA 32
 # define MAX_LINE 200000
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_format
+typedef struct s_format
 {
 	char			flags[9];
 	int				width;
@@ -85,8 +85,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *big,
-								const char *little,
-								size_t len);
+						const char *little,
+						size_t len);
 int					ft_strcmp(char *s1, char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -125,23 +125,23 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
-								void *(*f)(void *),
-								void (*del)(void *));
+						void *(*f)(void *),
+						void (*del)(void *));
 
 /*
 ** MATH FUNCTIONS
 */
 
-int					ft_is_even(int nb);
+int					ft_is_even(long long nb);
 long double			ft_remainder(long double numer, long double denom);
 long long			ft_power(long long nb, long long power);
-int					ft_sqrt(int nb);
+long long			ft_sqrt(long long nb);
 long long			ft_abs(long long n);
-double				ft_fabs(double n);
+long double			ft_fabs(long double n);
 size_t				get_len_int(long long nb);
 size_t				get_len_float(long double nb);
 size_t				get_len_uint(unsigned long long nb);
-int					ft_round(double nb);
+long long			ft_round(long double nb);
 long double			ft_roundf(long double nb, int decimal_places);
 
 #endif

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 07:52:06 by dda-silv          #+#    #+#             */
-/*   Updated: 2020/11/05 20:04:52 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:27:25 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+long long	ft_sqrt(long long nb)
 {
-	int tmp;
-	int i;
+	long long	tmp;
+	long long	i;
 
 	tmp = nb;
 	i = 1;

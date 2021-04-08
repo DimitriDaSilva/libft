@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 08:27:17 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/24 08:30:47 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:56:31 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncpy(char *dest, char *src, size_t n)
 {
-	char *sav_dest;
-	char *sav_src;
+	char	*sav_dest;
+	char	*sav_src;
 
 	sav_dest = dest;
 	sav_src = src;
@@ -23,7 +23,8 @@ char	*ft_strncpy(char *dest, char *src, size_t n)
 	{
 		while (1)
 		{
-			if ((*sav_dest++ = *sav_src++) == 0)
+			*sav_dest = *sav_src++;
+			if (*sav_dest++ == 0)
 			{
 				while (--n != 0)
 					*sav_dest++ = 0;

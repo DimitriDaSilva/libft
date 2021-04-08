@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:31:59 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/18 19:44:07 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:35:22 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_ultoa(unsigned long long n)
 	size_t	size_nbr;
 
 	size_nbr = get_len_uint(n);
-	if (!(str = ft_calloc(size_nbr + 1, sizeof(char))))
+	str = ft_calloc(size_nbr + 1, sizeof(char));
+	if (!str)
 		return (0);
 	str += size_nbr - 1;
 	while (size_nbr--)

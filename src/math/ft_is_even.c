@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_even.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 22:18:00 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/21 22:18:34 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:26:40 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_even(int nb)
+int	ft_is_even(long long nb)
 {
 	return (nb % 2 == 0);
 }

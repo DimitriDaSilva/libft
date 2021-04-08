@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 08:29:08 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/21 21:40:43 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:30:01 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 **			of the last round up, the loop basically ends there
 */
 
-char		*round_before_decimal(char *str_nb, int length)
+char	*round_before_decimal(char *str_nb, int length)
 {
 	char	*new_str_nb;
 	int		new_length;
@@ -53,8 +53,9 @@ char		*round_before_decimal(char *str_nb, int length)
 	i = get_pos_dec_point_old_str(str_nb, length);
 	j = get_pos_dec_point_new_str(i, length, new_length);
 	copy_after_decimal(str_nb, new_str_nb, length, new_length);
-	while (j-- >= 0 && (new_str_nb[j + 1] == '.' ||
-			new_str_nb[j + 1] == '0' || new_str_nb[j + 1] == 0))
+	while (j-- >= 0 && (new_str_nb[j + 1] == '.'
+			|| new_str_nb[j + 1] == '0'
+			|| new_str_nb[j + 1] == 0))
 	{
 		if (--i < 0 || str_nb[i] == '-')
 			new_str_nb[j] = '1';

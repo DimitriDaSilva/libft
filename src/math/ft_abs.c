@@ -6,11 +6,17 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:54:24 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/21 20:05:38 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:23:23 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long long	ft_abs(long long n)
 {
-	return (n < 0 ? -n : n);
+	long long	ret;
+
+	if (n < 0)
+		ret = (-1) * n;
+	else
+		ret = n;
+	return (ret);
 }

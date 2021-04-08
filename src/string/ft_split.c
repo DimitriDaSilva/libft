@@ -6,14 +6,13 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/23 18:12:25 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:15:59 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_split.h"
-#include <stdio.h>
 
-char			**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
 	char	**strs;
 	int		i;
@@ -24,7 +23,8 @@ char			**ft_split(char *str, char *charset)
 	k = 0;
 	if (str == 0)
 		return (0);
-	if (!(strs = malloc((find_length(str, charset) + 1) * sizeof(char *))))
+	strs = malloc((find_length(str, charset) + 1) * sizeof(char *));
+	if (!strs)
 		return (0);
 	while (str[j] != '\0')
 	{
@@ -40,9 +40,9 @@ char			**ft_split(char *str, char *charset)
 	return (strs);
 }
 
-static int		find_length(char *str, char *charset)
+static int	find_length(char *str, char *charset)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*str)
@@ -51,9 +51,10 @@ static int		find_length(char *str, char *charset)
 	return (count);
 }
 
-static void		import_str(char **dest, char *src, int start, int end)
+static void	import_str(char **dest, char *src, int start, int end)
 {
-	if (!(*dest = malloc(((end - start + 1) * sizeof(char)))))
+	dest = malloc(((end - start + 1) * sizeof(char)));
+	if (!(*dest))
 		return ;
 	ft_strncpy(*dest, src, end - start);
 	(*dest)[end - start] = '\0';

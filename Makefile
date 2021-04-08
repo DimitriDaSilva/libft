@@ -6,7 +6,7 @@
 #    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/11 09:33:15 by dda-silv          #+#    #+#              #
-#    Updated: 2021/04/08 10:00:17 by dda-silv         ###   ########.fr        #
+#    Updated: 2021/04/08 11:03:25 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ init:
 $(NAME):				$(OBJS)
 						@ $(ARRC) $@ $(OBJS)
 
+bonus:					all
 
 $(PATH_BUILD)/%.o:		%.c
 						@ mkdir -p $(dir $@)

@@ -6,14 +6,14 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:10:44 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/17 14:50:00 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:28:40 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	reverse_arr(int *arr, int size)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	i = 0;
 	while (i < size / 2)

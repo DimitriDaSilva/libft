@@ -6,13 +6,13 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 16:12:01 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/18 15:16:59 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:27:04 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long long	ft_power(long long nb, long long power)
 {
-	int result;
+	long long	result;
 
 	if (power == 0)
 		return (1);

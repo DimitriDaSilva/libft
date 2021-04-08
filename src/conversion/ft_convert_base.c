@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 12:40:14 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/22 17:05:19 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/08 11:34:29 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_convert_base.h"
 
-char		*ft_convert_base(unsigned long long nbr, char *base_to)
+char	*ft_convert_base(unsigned long long nbr, char *base_to)
 {
 	int		nbr_converted_len;
 	char	*nbr_converted;
 
 	nbr_converted_len = length_nbr(nbr, base_to);
-	if (!(nbr_converted = ft_calloc(nbr_converted_len + 1, sizeof(char))))
+	nbr_converted = ft_calloc(nbr_converted_len + 1, sizeof(char));
+	if (!nbr_converted)
 		return (0);
 	ft_putnbr_base(nbr, base_to, nbr_converted);
 	return (nbr_converted);
@@ -29,19 +30,17 @@ static int	length_nbr(unsigned long long nbr, char *base)
 	int					base_size;
 	int					count;
 	unsigned long long	max;
-	unsigned long long	tmp;
 
 	base_size = 0;
 	while (base[base_size] != '\0')
 		base_size++;
 	count = 0;
 	max = 1;
-	tmp = (nbr > 0) ? nbr : nbr * (-1);
-	while (max <= tmp)
+	while (max <= nbr)
 	{
 		max = max * base_size;
 		count++;
-		if (max == 1152921504606846976)
+		if (max == LIMIT_BEFORE_OVERFLOW)
 			break ;
 	}
 	return (count);
