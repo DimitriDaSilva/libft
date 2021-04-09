@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 11:12:35 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/09 11:42:45 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/09 11:57:14 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_lst_print_s(t_list *lst)
 		printf("\"%s\" -", (char *)tmp->content);
 		tmp = tmp->next;
 	}
-	printf("\"%s\"\n", (char *)tmp->content);
+	printf(" \"%s\"\n", (char *)tmp->content);
 }
