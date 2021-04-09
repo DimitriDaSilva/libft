@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/09 14:26:59 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/09 17:13:06 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	void			*data;
 	struct s_list	*next;
 }					t_list;
 
@@ -117,7 +117,7 @@ int					ft_isspace(char c);
 ** LINKED LISTS FUNCTIONS
 */
 
-t_list				*ft_lstnew(void *content);
+t_list				*ft_lstnew(void *data);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
