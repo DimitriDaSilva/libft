@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/09 11:19:33 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:26:59 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ t_list				*ft_lstmap(t_list *lst,
 						void *(*f)(void *),
 						void (*del)(void *));
 void				ft_lst_print_s(t_list *lst);
+void				ft_lst_print_d(t_list *lst);
 
 /*
 ** MATH FUNCTIONS
