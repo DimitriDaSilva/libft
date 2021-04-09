@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 11:12:35 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/09 15:10:23 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:18:28 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_lst_print_s(t_list *lst)
 	t_list	*tmp;
 
 	if (lst == 0)
+	{
+		printf("\n");
 		return ;
+	}
 	tmp = lst;
 	while (tmp->next)
 	{
@@ -30,7 +33,10 @@ void	ft_lst_print_s(t_list *lst)
 void	ft_lst_print_d(t_list *lst)
 {
 	if (lst == 0)
+	{
+		printf("\n");
 		return ;
+	}
 	while (lst->next)
 	{
 		printf("[%ld]-", (long int)lst->content);
