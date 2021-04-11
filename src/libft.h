@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/09 17:13:06 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/11 10:09:59 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ t_list				*ft_lstmap(t_list *lst,
 						void (*del)(void *));
 void				ft_lst_print_s(t_list *lst);
 void				ft_lst_print_d(t_list *lst);
+int					ft_lst_find_max(t_list *lst);
+int					ft_lst_find_min(t_list *lst);
 
 /*
 ** MATH FUNCTIONS
