@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lst_sort.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 16:56:31 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:08:23 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/11 15:52:06 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/11 16:04:24 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_LST_SORT_H
+# define FT_LST_SORT_H
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*tmp;
+# include "libft.h"
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(tmp, del);
-	}
-	*lst = 0;
-}
+static void		split_list(t_list *head,
+					t_list **first_half,
+					t_list **second_half);
+static t_list	*merge_sort(t_list *a, t_list *b, int (*op)(int, int));
 
-void	ft_lstdel_int(void *data)
-{
-	(void)data;
-}
+#endif

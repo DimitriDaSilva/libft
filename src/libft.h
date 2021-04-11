@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 10:09:59 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:23:28 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,14 +124,20 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
+void				ft_lstdel_int(void *data);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 						void *(*f)(void *),
 						void (*del)(void *));
 void				ft_lst_print_s(t_list *lst);
 void				ft_lst_print_d(t_list *lst);
-int					ft_lst_find_max(t_list *lst);
-int					ft_lst_find_min(t_list *lst);
+long long			ft_lst_find_min(t_list *lst);
+long long			ft_lst_find_max(t_list *lst);
+long long			ft_lst_find_median(t_list *lst);
+t_list				*ft_lstdup(t_list *lst);
+void				ft_lst_sort(t_list **lst, int (*op)(int, int));
+int					ascending(int a, int b);
+int					descending(int a, int b);
 
 /*
 ** MATH FUNCTIONS

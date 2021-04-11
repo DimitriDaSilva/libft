@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lst_find_median.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 16:56:31 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:08:23 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/11 16:10:23 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/11 16:24:55 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_lst_find_median.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+long long			ft_lst_find_median(t_list *lst)
 {
-	t_list	*tmp;
+	t_list *dup;
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(tmp, del);
-	}
-	*lst = 0;
-}
-
-void	ft_lstdel_int(void *data)
-{
-	(void)data;
+	dup = ft_lstdup(lst);
+	ft_lst_print_d(dup);
+	ft_lst_sort(&dup, ascending);
+	ft_lst_print_d(dup);
+	ft_lstclear(&dup, ft_lstdel_int);
+	return (3);
 }

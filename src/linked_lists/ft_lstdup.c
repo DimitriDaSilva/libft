@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 16:56:31 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:08:23 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/11 15:51:03 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/11 16:28:15 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+/*
+** Duplicates a linked list
+** @param:	- [t_list *] linked list to duplicate
+** @return:	[t_list *] duplicate
+*/
+
+t_list	*ft_lstdup(t_list *lst)
 {
+	t_list	*new_lst;
 	t_list	*tmp;
 
-	if (!lst)
-		return ;
-	while (*lst)
+	new_lst = 0;
+	while (lst)
 	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(tmp, del);
+		tmp = ft_lstnew(lst->data);
+		if (!tmp)
+			return (0);
+		ft_lstadd_back(&new_lst, tmp);
+		lst = lst->next;
 	}
-	*lst = 0;
-}
-
-void	ft_lstdel_int(void *data)
-{
-	(void)data;
+	return (new_lst);
 }

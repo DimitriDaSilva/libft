@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lst_find_median.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 16:56:31 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:08:23 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/11 16:11:57 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/11 16:12:23 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_LST_FIND_MEDIAN_H
+# define FT_LST_FIND_MEDIAN_H
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*tmp;
+# include "libft.h"
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(tmp, del);
-	}
-	*lst = 0;
-}
-
-void	ft_lstdel_int(void *data)
-{
-	(void)data;
-}
+#endif
