@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_max.c                                  :+:      :+:    :+:   */
+/*   ft_lst_get_node_index.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/11 10:03:33 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:14:31 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/12 14:47:41 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/12 15:02:10 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long	ft_lst_find_max(t_list *lst)
+int	ft_lst_get_node_index(t_list *lst, long long data_to_find)
 {
-	long long	max;
+	int	index;
 
-	max = (long long int)lst->data;
+	index = 0;
 	while (lst)
 	{
-		if (max < (long long int)lst->data)
-			max = (long long int)lst->data;
+		if ((long long)lst->data == data_to_find)
+			break ;
+		index++;
 		lst = lst->next;
 	}
-	return (max);
+	if (!lst)
+		index = -1;
+	return (index);
 }

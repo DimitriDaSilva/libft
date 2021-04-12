@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:23:28 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/12 15:03:01 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,9 +131,10 @@ t_list				*ft_lstmap(t_list *lst,
 						void (*del)(void *));
 void				ft_lst_print_s(t_list *lst);
 void				ft_lst_print_d(t_list *lst);
-long long			ft_lst_find_min(t_list *lst);
-long long			ft_lst_find_max(t_list *lst);
-long long			ft_lst_find_median(t_list *lst);
+long long			ft_lst_get_min(t_list *lst);
+long long			ft_lst_get_max(t_list *lst);
+long long			ft_lst_get_median(t_list *lst);
+int					ft_lst_get_node_index(t_list *lst, long long data_to_find);
 t_list				*ft_lstdup(t_list *lst);
 void				ft_lst_sort(t_list **lst, int (*op)(int, int));
 int					ascending(int a, int b);
@@ -163,5 +164,15 @@ void				reverse_arr(int *arr, int size);
 void				free_arr(void **ptr);
 void				print_arr_int(int *arr, int len);
 void				print_arr_str(char **strs);
+
+/*
+** COMPARISON FUNCTIONS
+*/
+
+int					is_equal(int a, int b);
+int					is_greater_than_or_equal(int a, int b);
+int					is_greater_than(int a, int b);
+int					is_less_than_or_equal(int a, int b);
+int					is_less_than(int a, int b);
 
 #endif

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find_min.c                                  :+:      :+:    :+:   */
+/*   comparison.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/11 10:06:59 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/11 16:14:23 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/04/12 14:26:25 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/04/12 14:30:59 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-long long	ft_lst_find_min(t_list *lst)
+int	is_equal(int a, int b)
 {
-	long long	min;
+	return (a == b);
+}
 
-	min = (long long int)lst->data;
-	while (lst)
-	{
-		if ((long long int)lst->data < min)
-			min = (long long int)lst->data;
-		lst = lst->next;
-	}
-	return (min);
+int	is_greater_than_or_equal(int a, int b)
+{
+	return (a >= b);
+}
+
+int	is_greater_than(int a, int b)
+{
+	return (a > b);
+}
+
+int	is_less_than_or_equal(int a, int b)
+{
+	return (a <= b);
+}
+
+int	is_less_than(int a, int b)
+{
+	return (a < b);
 }
