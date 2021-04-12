@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:48:03 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/12 14:48:04 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/12 15:54:52 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	ft_lst_get_median(t_list *lst)
 	dup = ft_lstdup(lst);
 	half_size = ft_lstsize(dup) / 2;
 	ft_lst_sort(&dup, ascending);
-	tmp	= dup;
+	tmp = dup;
 	while (half_size--)
 		tmp = tmp->next;
 	median = (long long)tmp->data;
