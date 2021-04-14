@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:47:53 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/12 14:47:54 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/14 09:48:23 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ long long	ft_lst_get_min(t_list *lst)
 {
 	long long	min;
 
+	if (!lst)
+		return (INT_MIN);
 	min = (long long int)lst->data;
 	while (lst)
 	{
