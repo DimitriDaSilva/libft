@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/15 13:29:42 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:55:23 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ t_list				*ft_lstdup(t_list *lst);
 void				ft_lst_sort(t_list **lst, int (*op)(int, int));
 int					ascending(int a, int b);
 int					descending(int a, int b);
+void				*ft_lst_get_data_last_node(t_list *lst);
 
 /*
 ** MATH FUNCTIONS
