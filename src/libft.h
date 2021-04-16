@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/15 15:55:23 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/16 12:05:26 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ long long			ft_lst_get_max(t_list *lst);
 long long			ft_lst_get_median(t_list *lst);
 long long			ft_lst_get_qrtl(t_list *lst, int qrtl_picked);
 long long			ft_lst_get_decile(t_list *lst, int dcl_picked);
+long long			ft_lst_get_centile(t_list *lst, int ctl_picked);
 int					ft_lst_get_node_index(t_list *lst, long long data_to_find);
 t_list				*ft_lstdup(t_list *lst);
 void				ft_lst_sort(t_list **lst, int (*op)(int, int));
