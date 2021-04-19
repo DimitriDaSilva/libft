@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:55:24 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/08 11:35:51 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/19 18:02:00 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,25 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	n_to_print;
 	int		remainder;
+	int		ret;
 
 	if (0 <= n && n < 10)
 	{
 		n_to_print = convert_to_char(n);
-		write(fd, &n_to_print, 1);
+		ret = write(fd, &n_to_print, 1);
 		return ;
 	}
 	else if (-10 < n && n < 0)
 	{
-		write(fd, "-", 1);
+		ret = write(fd, "-", 1);
 		n_to_print = convert_to_char(n);
-		write(fd, &n_to_print, 1);
+		ret = write(fd, &n_to_print, 1);
 		return ;
 	}
 	remainder = n % 10;
 	ft_putnbr_fd(n / 10, fd);
 	n_to_print = convert_to_char(remainder);
-	write(fd, &n_to_print, 1);
+	ret = write(fd, &n_to_print, 1);
 	return ;
+	(void)ret;
 }
