@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/19 18:03:55 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/21 16:02:39 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 # define ASCII_OFFSET_NUM 48
 # define ASCII_OFFSET_ALPHA 32
 # define MAX_LINE 200000
+
+typedef struct s_dlist
+{
+	void			*data;
+	struct s_dlist	*prev;
+	struct s_dlist	*next;
+}					t_dlist;
 
 typedef struct s_list
 {
