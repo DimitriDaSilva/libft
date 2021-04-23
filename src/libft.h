@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/21 16:02:39 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/23 17:26:14 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char *str, char *charset);
 int					get_next_line(int fd, char **line);
 int					ft_strisdigit(char *s);
+int					ft_strisspace(char *str);
 int					ft_strchr_freq(const char *s, int c);
 
 /*
