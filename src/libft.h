@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/23 17:26:14 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/25 11:51:15 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
-
-# define ASCII_OFFSET_NUM 48
-# define ASCII_OFFSET_ALPHA 32
-# define MAX_LINE 200000
-
-typedef struct s_dlist
-{
-	void			*data;
-	struct s_dlist	*prev;
-	struct s_dlist	*next;
-}					t_dlist;
-
-typedef struct s_list
-{
-	void			*data;
-	struct s_list	*next;
-}					t_list;
-
-typedef struct s_format
-{
-	char			flags[9];
-	int				width;
-	int				precision;
-	char			size[9];
-	char			type;
-}					t_format;
+# include "constants.h"
+# include "structs.h"
 
 /*
 ** MEMORY FUNCTIONS
@@ -156,6 +132,22 @@ void				ft_lst_sort(t_list **lst, int (*op)(int, int));
 int					ascending(int a, int b);
 int					descending(int a, int b);
 void				*ft_lst_get_data_last_node(t_list *lst);
+
+/*
+** DOUBLE LINKED LISTS FUNCTIONS
+*/
+
+t_dlist				*ft_dlstnew(void *data);
+void				ft_dlstadd_front(t_dlist **lst, t_dlist *new);
+void				ft_dlstadd_back(t_dlist **lst, t_dlist *new);
+t_dlist				*ft_dlstlast(t_dlist *lst);
+void				ft_dlstadd_after_another(t_dlist *node,
+						t_dlist *node_to_insert);
+int					ft_dlstsize(t_dlist *lst);
+void				ft_dlstdelone(t_dlist *lst, void (*del)(void*));
+void				ft_dlstdel_first(t_dlist **lst, void (*del)(void*));
+void				ft_dlstdel_last(t_dlist *lst, void (*del)(void*));
+void				ft_dlstclear(t_dlist **lst, void (*del)(void*));
 
 /*
 ** MATH FUNCTIONS
