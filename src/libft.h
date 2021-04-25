@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/25 11:51:15 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/25 11:54:51 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
-# include "constants.h"
-# include "structs.h"
+# include "constants_libft.h"
+# include "structs_libft.h"
 
 /*
 ** MEMORY FUNCTIONS
