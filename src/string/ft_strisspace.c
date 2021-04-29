@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:19:08 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/23 17:25:53 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/04/30 00:28:04 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strisspace(char *str)
 	{
 		if (!ft_isspace(*str))
 		{
-			check = 1;
+			check = 0;
 			break ;
 		}
 		str++;
