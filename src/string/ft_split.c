@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/04/08 11:15:59 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/05/02 19:01:32 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,16 @@ static int	find_length(char *str, char *charset)
 
 	count = 0;
 	while (*str)
+	{
 		if (!ft_strchr(charset, *str++))
 			count++;
+	}
 	return (count);
 }
 
 static void	import_str(char **dest, char *src, int start, int end)
 {
-	dest = malloc(((end - start + 1) * sizeof(char)));
+	*dest = malloc(((end - start + 1) * sizeof(char)));
 	if (!(*dest))
 		return ;
 	ft_strncpy(*dest, src, end - start);
