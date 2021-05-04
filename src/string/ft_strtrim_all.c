@@ -6,13 +6,13 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 19:31:13 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/05/02 18:50:05 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/05/04 17:13:29 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_strtrim_all.h"
 
-char	*ft_strtrim_all(char const *s1, char const *set)
+char	*ft_strtrim_all(const char *s1, const char *set)
 {
 	char	*new_str;
 	char	**split;
@@ -24,7 +24,7 @@ char	*ft_strtrim_all(char const *s1, char const *set)
 	if (!split)
 		return (0);
 	size_new_str = get_length(split);
-	if (size_new_str == 1)
+	if (size_new_str == 0)
 		return (ft_strdup(""));
 	new_str = ft_calloc(size_new_str + 1, sizeof(char));
 	if (!new_str)
