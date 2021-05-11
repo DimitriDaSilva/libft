@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/05/11 10:32:31 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/05/11 12:39:22 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,9 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstdel_first(t_list **lst, void (*del)(void*));
 void				ft_lstdel_last(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
+void				ft_lstclear_if(t_list **lst,
+						int (*cmp)(void *),
+						void (*del)(void *));
 void				ft_lstdel_int(void *data);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
